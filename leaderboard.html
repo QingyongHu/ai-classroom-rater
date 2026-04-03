@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI评课挑战 · 实时战报 | 童心智教</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      margin: 0;
+      background: #1A0A2E;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+        "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      overflow: hidden;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body class="leaderboard-page">
+  <div class="lb-container">
+    <header class="lb-header">
+      <img src="assets/logo/童心智教logo.jpg" alt="童心智教" class="lb-header-logo">
+      <h1>AI评课挑战 · 实时战报</h1>
+      <p>排名规则：与AI评分越接近，排名越靠前</p>
+    </header>
+
+    <div class="lb-stats">
+      <div class="lb-stat">
+        <div class="lb-stat-value" id="lb-count">0</div>
+        <div class="lb-stat-label">今日参与人数</div>
+      </div>
+      <div class="lb-stat">
+        <div class="lb-stat-value" id="lb-avg-gap">0.0</div>
+        <div class="lb-stat-label">平均评课差异</div>
+      </div>
+    </div>
+
+    <div id="lb-podium" class="lb-podium"></div>
+
+    <div id="lb-list" class="lb-list"></div>
+
+    <div class="lb-marquee">扫码参与 → 看看您的评课直觉准不准？</div>
+  </div>
+
+  <!-- Local Libraries -->
+  <script src="js/lib/chart.umd.min.js"></script>
+
+  <!-- App Scripts -->
+  <script src="js/app.js"></script>
+  <script src="js/leaderboard.js"></script>
+  <script>
+    function waitForApp() {
+      if (window.App && App.Leaderboard && App.StorageManager) {
+        initLeaderboard();
+      } else {
+        setTimeout(waitForApp, 100);
+      }
+    }
+
+    function initLeaderboard() {
+      var podium = document.getElementById('lb-podium');
+      var list = document.getElementById('lb-list');
+      var countEl = document.getElementById('lb-count');
+      var avgGapEl = document.getElementById('lb-avg-gap');
+
+      function refresh() {
+        App.Leaderboard.renderPodium(podium);
+        App.Leaderboard.renderList(list, 20);
+        App.Leaderboard.renderStats(countEl, avgGapEl);
+      }
+
+      refresh();
+
+      // Auto refresh every 10 seconds
+      setInterval(refresh, 10000);
+
+      // Cross-tab update via storage event
+      window.addEventListener('storage', function (e) {
+        if (e.key && e.key.indexOf('acr_') === 0) {
+          refresh();
+        }
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', waitForApp);
+    } else {
+      waitForApp();
+    }
+  </script>
+</body>
+</html>

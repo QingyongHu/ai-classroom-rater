@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="theme-color" content="#5B2C86">
+  <title>AI评课挑战 · 童心智教</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+
+    <!-- ==================== Page: Home ==================== -->
+    <section id="page-home" class="page active">
+      <div class="home-content">
+        <div class="home-logo-wrap">
+          <img src="assets/logo/童心智教logo.jpg" alt="童心智教" class="home-logo">
+        </div>
+        <div class="home-title-area">
+          <h1 class="home-title">您的评课直觉准不准？</h1>
+          <p class="home-subtitle">看一段幼儿园视频，您来打分，看看和AI差多少</p>
+        </div>
+        <button id="btn-start" class="btn-primary btn-large">开始挑战</button>
+        <div class="home-counter">
+          已有 <span id="counter-num" class="counter-number">0</span> 人参与
+        </div>
+        <p class="home-footer">视频素材来源于公开平台，仅用于学术展示与教育讨论，不代表对个人的评价。</p>
+        <div class="home-bottom-logo">
+          <img src="assets/logo/CUHKSZ.png" alt="香港中文大学（深圳）" class="home-cuhk-logo">
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== Page: Select Video ==================== -->
+    <section id="page-select" class="page">
+      <header class="page-header">
+        <button class="btn-back" data-go="home">← 返回</button>
+        <h2 class="page-title">选一段视频来评评看</h2>
+      </header>
+      <div id="video-cards" class="video-cards">
+        <!-- Dynamically populated -->
+      </div>
+    </section>
+
+    <!-- ==================== Page: Play + Rate ==================== -->
+    <section id="page-play" class="page">
+      <header class="page-header">
+        <button class="btn-back" data-go="select">← 返回</button>
+        <h2 class="page-title" id="play-title"></h2>
+      </header>
+
+      <!-- Video Area -->
+      <div class="video-wrapper">
+        <video id="main-video" playsinline webkit-playsinline preload="metadata" class="video-player">
+          <source id="video-source" src="" type="video/mp4">
+        </video>
+        <div id="video-overlay" class="video-overlay">
+          <button id="btn-play-overlay" class="btn-play-overlay" aria-label="播放视频">▶</button>
+        </div>
+        <div id="video-error" class="video-error" style="display:none;">
+          <p>视频加载失败</p>
+          <button id="btn-retry" class="btn-secondary btn-small">重试</button>
+        </div>
+        <div class="video-progress-bar">
+          <div id="video-progress" class="video-progress-fill"></div>
+        </div>
+      </div>
+
+      <!-- Rating Area -->
+      <div id="rating-area" class="rating-area">
+        <h3 class="rating-title">凭直觉打分</h3>
+        <div id="rating-dimensions" class="rating-dimensions">
+          <!-- Dynamically populated per video -->
+        </div>
+        <div class="rating-hint" id="rating-hint">请完成所有维度的评分</div>
+        <div class="btn-submit-wrap">
+          <button id="btn-submit" class="btn-primary btn-submit" disabled>提交我的评分</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== Page: Analysis Animation ==================== -->
+    <section id="page-analysis" class="page">
+      <div class="analysis-content">
+        <div class="analysis-icon">
+          <div class="analysis-pulse"></div>
+          <img src="assets/logo/童心智教logo.jpg" alt="" class="analysis-logo">
+        </div>
+        <div class="analysis-progress">
+          <div class="analysis-progress-bar"></div>
+        </div>
+        <p id="analysis-status" class="analysis-status">小AI测评员正在分析课堂互动...</p>
+        <div class="analysis-particles">
+          <span class="particle"></span>
+          <span class="particle"></span>
+          <span class="particle"></span>
+          <span class="particle"></span>
+          <span class="particle"></span>
+          <span class="particle"></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== Page: Result ==================== -->
+    <section id="page-result" class="page">
+      <div class="result-content">
+        <div class="result-header">
+          <h2 class="result-title">您 vs AI</h2>
+          <div class="result-scores-summary">
+            <div class="result-score-item">
+              <span class="result-score-label" style="color:#5B2C86">您的评分</span>
+              <span class="result-score-value" id="result-user-avg">0.0</span>
+            </div>
+            <div class="result-score-divider">/</div>
+            <div class="result-score-item">
+              <span class="result-score-label" style="color:#D4A843">AI评估</span>
+              <span class="result-score-value" id="result-ai-avg">0.0</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="radar-container">
+          <canvas id="radar-chart"></canvas>
+        </div>
+        <div class="radar-legend">
+          <span class="legend-item"><span class="legend-dot" style="background:#5B2C86"></span> 您的评分</span>
+          <span class="legend-item"><span class="legend-dot" style="background:#D4A843"></span> AI评估</span>
+        </div>
+
+        <div class="insights-card">
+          <h3 class="insights-title">AI 发现了什么？</h3>
+          <div id="insights-highlights" class="insights-section">
+            <!-- Filled by JS -->
+          </div>
+          <div id="insights-improvements" class="insights-section">
+            <!-- Filled by JS -->
+          </div>
+          <p id="insights-summary" class="insights-summary"></p>
+        </div>
+
+        <div class="result-actions">
+          <button id="btn-share" class="btn-primary">保存我的评课报告</button>
+          <button id="btn-retry-video" class="btn-secondary">再挑战一段</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== Page: Share Card ==================== -->
+    <section id="page-share" class="page share-page">
+      <div class="share-card-outer">
+        <div id="share-card" class="share-card">
+          <div class="share-card-header">
+            <img src="assets/logo/童心智教logo.jpg" alt="" class="share-card-logo">
+            <div class="share-card-brand">
+              <span class="share-card-app">AI评课挑战</span>
+              <span class="share-card-org">童心智教 · 香港中文大学（深圳）</span>
+            </div>
+          </div>
+          <div class="share-card-title">我的评课观察力报告</div>
+          <div class="share-card-chart">
+            <img id="share-radar-img" src="" alt="" class="share-radar-img">
+          </div>
+          <div class="share-card-scores" id="share-card-scores">
+            <!-- Score comparison -->
+          </div>
+          <div class="share-card-summary" id="share-card-summary"></div>
+          <div class="share-card-footer">
+            <span>扫码试试您的评课直觉 →</span>
+          </div>
+        </div>
+        <div class="share-actions">
+          <button id="btn-download" class="btn-primary">保存图片</button>
+          <button id="btn-close-share" class="btn-secondary">关闭</button>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Local Libraries (no CDN dependency) -->
+  <script src="js/lib/chart.umd.min.js"></script>
+  <script src="js/lib/html2canvas.min.js"></script>
+
+  <!-- App Scripts -->
+  <script src="js/app.js"></script>
+  <script src="js/video-player.js"></script>
+  <script src="js/rating.js"></script>
+  <script src="js/radar-chart.js"></script>
+  <script src="js/share-card.js"></script>
+  <script src="js/leaderboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+{
+  "videos": [
+    {
+      "id": "v1",
+      "title": "挖呀挖呀挖",
+      "description": "全网爆火的手指谣教学",
+      "tag": "热门",
+      "emoji": "🎵",
+      "videoSrc": "assets/videos/v1.mp4",
+      "thumbnailSrc": "assets/thumbnails/v1.jpg",
+      "subtitles": [
+        { "start": 0, "end": 3, "text": "在小小的花园里面挖呀挖呀挖" },
+        { "start": 3, "end": 6, "text": "种小小的种子开小小的花" }
+      ],
+      "dimensions": [
+        {
+          "id": "v1_d1",
+          "label": "老师对孩子够不够关注？",
+          "proLabel": "教师敏感性",
+          "aiScore": 1.5
+        },
+        {
+          "id": "v1_d2",
+          "label": "孩子们参与得积极吗？",
+          "proLabel": "儿童参与度",
+          "aiScore": 2.0
+        },
+        {
+          "id": "v1_d3",
+          "label": "这个活动适合这个年龄段吗？",
+          "proLabel": "活动适宜性",
+          "aiScore": 1.5
+        },
+        {
+          "id": "v1_d4",
+          "label": "整体来说，这是一堂好课吗？",
+          "proLabel": "综合质量",
+          "aiScore": 2.0
+        }
+      ],
+      "insights": {
+        "highlights": [
+          "老师表现力强，歌曲旋律朗朗上口，节奏轻快吸引人"
+        ],
+        "improvements": [
+          "老师的眼神更多面向镜头而非孩子，真正的师幼互动中，目光追随是关键",
+          "手指动作复杂度超出3岁幼儿的精细动作发展水平，容易产生挫败感",
+          "节奏偏快，缺少给孩子观察、模仿和思考的\"留白\"时间"
+        ],
+        "summary": "作为一段表演，它很有感染力；但作为一堂课，孩子的参与和发展空间还有提升余地。"
+      }
+    },
+    {
+      "id": "v2",
+      "title": "杯子歌节奏课",
+      "description": "超酷的音乐律动教学",
+      "tag": "挑战",
+      "emoji": "🥤",
+      "videoSrc": "assets/videos/v2.mp4",
+      "thumbnailSrc": "assets/thumbnails/v2.jpg",
+      "subtitles": [
+        { "start": 0, "end": 3, "text": "（老师示范杯子节奏动作）" },
+        { "start": 3, "end": 6, "text": "准备——拿、放、拍拍手" },
+        { "start": 6, "end": 10, "text": "到了旁边我们要交换双手握住它" }
+      ],
+      "dimensions": [
+        {
+          "id": "v2_d1",
+          "label": "老师的教法清晰易懂吗？",
+          "proLabel": "指导方式",
+          "aiScore": 2.5
+        },
+        {
+          "id": "v2_d2",
+          "label": "老师和孩子之间有真正的交流吗？",
+          "proLabel": "师幼互动质量",
+          "aiScore": 2.0
+        },
+        {
+          "id": "v2_d3",
+          "label": "活动的难度安排合理吗？",
+          "proLabel": "学习支架搭建",
+          "aiScore": 2.0
+        },
+        {
+          "id": "v2_d4",
+          "label": "整体来说，这是一堂好课吗？",
+          "proLabel": "综合质量",
+          "aiScore": 2.5
+        }
+      ],
+      "insights": {
+        "highlights": [
+          "老师耐心地将复杂动作拆解为单个步骤，示范多次"
+        ],
+        "improvements": [
+          "语言指令过多且过长，幼儿工作记忆有限，容易超载——专业做法是\"少说多做\"",
+          "老师频繁看手机/音乐设备，缺乏与孩子的眼神交流，情感连接偏弱",
+          "从分解动作直接跳到原速音乐配合，难度跨度过大，多数孩子实际上在\"假装做\""
+        ],
+        "summary": "这位老师很用心，但教学节奏需要更贴合幼儿的认知特点——慢一些，指令少一些，关注多一些。"
+      }
+    },
+    {
+      "id": "v3",
+      "title": "新年汇报演出",
+      "description": "整齐划一的舞台表演",
+      "tag": "温馨",
+      "emoji": "🎸",
+      "videoSrc": "assets/videos/v3.mp4",
+      "thumbnailSrc": "assets/thumbnails/v3.jpg",
+      "subtitles": [
+        { "start": 0, "end": 4, "text": "（孩子们列队进行手势舞表演）" },
+        { "start": 4, "end": 8, "text": "（统一做敬礼、比心等动作）" },
+        { "start": 8, "end": 12, "text": "（拿起乐器进行集体\"演奏\"）" }
+      ],
+      "dimensions": [
+        {
+          "id": "v3_d1",
+          "label": "孩子们看起来享受其中吗？",
+          "proLabel": "情感体验",
+          "aiScore": 1.5
+        },
+        {
+          "id": "v3_d2",
+          "label": "这个节目让孩子学到东西了吗？",
+          "proLabel": "教育价值",
+          "aiScore": 1.5
+        },
+        {
+          "id": "v3_d3",
+          "label": "这种安排尊重了孩子的特点吗？",
+          "proLabel": "儿童发展适宜性",
+          "aiScore": 1.0
+        },
+        {
+          "id": "v3_d4",
+          "label": "整体来说，这是好的教育活动吗？",
+          "proLabel": "综合质量",
+          "aiScore": 1.5
+        }
+      ],
+      "insights": {
+        "highlights": [
+          "可以看出老师和孩子为这场演出投入了大量准备，组织有序"
+        ],
+        "improvements": [
+          "动作高度统一，更像\"被编排\"而非\"在表达\"——幼儿艺术教育的核心是感受力，不是整齐度",
+          "仔细观察乐器演奏环节，多数孩子并没有真实拨弦，属于\"拿乐器的体操\"",
+          "长时间维持固定队形和姿态，超出了幼儿的生理和注意力承受范围"
+        ],
+        "summary": "整齐和震撼是给大人看的；但教育应该问：孩子在这个过程中，自主性和创造力有没有得到发展？"
+      }
+    }
+  ]
+}
