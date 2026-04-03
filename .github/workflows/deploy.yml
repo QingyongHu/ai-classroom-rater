@@ -2,7 +2,7 @@ name: Deploy to ECS
 
 on:
   push:
-    branches: [ main ]   # 推送到main分支时触发
+    branches: [ main ]
 
 jobs:
   deploy:
@@ -17,6 +17,7 @@ jobs:
           host: ${{ secrets.ECS_HOST }}
           username: ${{ secrets.ECS_USER }}
           key: ${{ secrets.ECS_SSH_KEY }}
-          source: "."                          # 上传整个项目
+          source: "."
           target: "/var/www/ai-classroom-rater"
-          rm: true                             # 清除旧文件再上传
+          rm: false
+          overwrite: true
