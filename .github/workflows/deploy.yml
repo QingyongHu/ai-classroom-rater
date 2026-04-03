@@ -1,0 +1,22 @@
+name: Deploy to ECS
+
+on:
+  push:
+    branches: [ main ]   # 推送到main分支时触发
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 拉取代码
+        uses: actions/checkout@v4
+
+      - name: 部署到ECS
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.ECS_HOST }}
+          username: ${{ secrets.ECS_USER }}
+          key: ${{ secrets.ECS_SSH_KEY }}
+          source: "."                          # 上传整个项目
+          target: "/var/www/ai-classroom-rater"
+          rm: true                             # 清除旧文件再上传
