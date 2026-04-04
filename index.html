@@ -39,6 +39,11 @@
         <button class="btn-back" data-go="home">← 返回</button>
         <h2 class="page-title">选一段视频来评评看</h2>
       </header>
+      <div id="video-tabs" class="video-tabs">
+        <button class="video-tab active" data-category="all">全部</button>
+        <button class="video-tab" data-category="classroom">课堂教学</button>
+        <button class="video-tab" data-category="family">亲子互动</button>
+      </div>
       <div id="video-cards" class="video-cards">
         <!-- Dynamically populated -->
       </div>
@@ -168,6 +173,7 @@
           <div class="share-card-summary" id="share-card-summary"></div>
           <div class="share-card-footer">
             <span>扫码试试您的评课直觉 →</span>
+            <div id="share-card-qrcode" class="share-card-qrcode"></div>
           </div>
         </div>
         <div class="share-actions">

@@ -272,13 +272,22 @@ window.App = window.App || {};
   }
 
   // --- Video Select Page ---
+  var _activeCategory = 'all';
+
   function renderVideoSelect() {
     var container = document.getElementById('video-cards');
     container.innerHTML = '';
 
-    var tagClasses = { '热门': 'tag-hot', '挑战': 'tag-challenge', '温馨': 'tag-warm' };
+    var tagClasses = {
+      '热门': 'tag-hot', '挑战': 'tag-challenge', '温馨': 'tag-warm',
+      '亲子': 'tag-family', '反思': 'tag-reflect', '警示': 'tag-warning', '公开课': 'tag-open'
+    };
 
-    State.videos.forEach(function (video) {
+    var filtered = _activeCategory === 'all'
+      ? State.videos
+      : State.videos.filter(function (v) { return v.category === _activeCategory; });
+
+    filtered.forEach(function (video) {
       var card = document.createElement('div');
       card.className = 'video-card';
       card.innerHTML =
@@ -294,6 +303,18 @@ window.App = window.App || {};
       });
 
       container.appendChild(card);
+    });
+  }
+
+  function initVideoTabs() {
+    var tabs = document.querySelectorAll('.video-tab');
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        tabs.forEach(function (t) { t.classList.remove('active'); });
+        tab.classList.add('active');
+        _activeCategory = tab.getAttribute('data-category');
+        renderVideoSelect();
+      });
     });
   }
 
@@ -341,6 +362,9 @@ window.App = window.App || {};
       if (App.Rating) App.Rating.init();
       if (App.RadarChart) App.RadarChart.init();
       if (App.ShareCard) App.ShareCard.init();
+
+      // Init video category tabs
+      initVideoTabs();
 
       // Start router
       Router.init();

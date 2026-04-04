@@ -539,6 +539,186 @@
       "aiAvgScore": 1.75,
       "gap": 3.25,
       "timestamp": "2026-04-09T16:32:58Z"
+    },
+    {
+      "id": "seed_061",
+      "nickname": "教育达人 #321",
+      "videoId": "v4",
+      "userAvgScore": 2.2,
+      "aiAvgScore": 1.875,
+      "gap": 0.33,
+      "timestamp": "2026-04-09T14:20:15Z"
+    },
+    {
+      "id": "seed_062",
+      "nickname": "观察小能手 #458",
+      "videoId": "v5",
+      "userAvgScore": 1.8,
+      "aiAvgScore": 1.5,
+      "gap": 0.3,
+      "timestamp": "2026-04-09T10:15:33Z"
+    },
+    {
+      "id": "seed_063",
+      "nickname": "评课新星 #789",
+      "videoId": "v7",
+      "userAvgScore": 2.0,
+      "aiAvgScore": 1.75,
+      "gap": 0.25,
+      "timestamp": "2026-04-09T11:30:22Z"
+    },
+    {
+      "id": "seed_064",
+      "nickname": "学前教育爱好者 #645",
+      "videoId": "v8",
+      "userAvgScore": 1.9,
+      "aiAvgScore": 1.625,
+      "gap": 0.28,
+      "timestamp": "2026-04-09T09:45:18Z"
+    },
+    {
+      "id": "seed_065",
+      "nickname": "细节发现者 #137",
+      "videoId": "v6",
+      "userAvgScore": 1.0,
+      "aiAvgScore": 0.75,
+      "gap": 0.25,
+      "timestamp": "2026-04-09T12:10:44Z"
+    },
+    {
+      "id": "seed_066",
+      "nickname": "教育达人 #842",
+      "videoId": "v4",
+      "userAvgScore": 2.5,
+      "aiAvgScore": 1.875,
+      "gap": 0.63,
+      "timestamp": "2026-04-09T13:55:09Z"
+    },
+    {
+      "id": "seed_067",
+      "nickname": "观察小能手 #290",
+      "videoId": "v5",
+      "userAvgScore": 2.5,
+      "aiAvgScore": 1.5,
+      "gap": 1.0,
+      "timestamp": "2026-04-09T15:22:37Z"
+    },
+    {
+      "id": "seed_068",
+      "nickname": "评课新星 #534",
+      "videoId": "v7",
+      "userAvgScore": 3.0,
+      "aiAvgScore": 1.75,
+      "gap": 1.25,
+      "timestamp": "2026-04-09T16:40:51Z"
+    },
+    {
+      "id": "seed_069",
+      "nickname": "学前教育爱好者 #178",
+      "videoId": "v8",
+      "userAvgScore": 3.0,
+      "aiAvgScore": 1.625,
+      "gap": 1.38,
+      "timestamp": "2026-04-09T08:30:12Z"
+    },
+    {
+      "id": "seed_070",
+      "nickname": "细节发现者 #953",
+      "videoId": "v6",
+      "userAvgScore": 2.5,
+      "aiAvgScore": 0.75,
+      "gap": 1.75,
+      "timestamp": "2026-04-09T14:08:29Z"
+    },
+    {
+      "id": "seed_071",
+      "nickname": "教育达人 #567",
+      "videoId": "v4",
+      "userAvgScore": 3.5,
+      "aiAvgScore": 1.875,
+      "gap": 1.63,
+      "timestamp": "2026-04-09T11:12:45Z"
+    },
+    {
+      "id": "seed_072",
+      "nickname": "观察小能手 #821",
+      "videoId": "v5",
+      "userAvgScore": 3.5,
+      "aiAvgScore": 1.5,
+      "gap": 2.0,
+      "timestamp": "2026-04-09T17:25:03Z"
+    },
+    {
+      "id": "seed_073",
+      "nickname": "评课新星 #412",
+      "videoId": "v7",
+      "userAvgScore": 3.8,
+      "aiAvgScore": 1.75,
+      "gap": 2.05,
+      "timestamp": "2026-04-09T10:50:17Z"
+    },
+    {
+      "id": "seed_074",
+      "nickname": "学前教育爱好者 #903",
+      "videoId": "v8",
+      "userAvgScore": 4.0,
+      "aiAvgScore": 1.625,
+      "gap": 2.38,
+      "timestamp": "2026-04-09T13:18:55Z"
+    },
+    {
+      "id": "seed_075",
+      "nickname": "细节发现者 #678",
+      "videoId": "v6",
+      "userAvgScore": 3.5,
+      "aiAvgScore": 0.75,
+      "gap": 2.75,
+      "timestamp": "2026-04-09T09:35:28Z"
+    },
+    {
+      "id": "seed_076",
+      "nickname": "教育达人 #145",
+      "videoId": "v4",
+      "userAvgScore": 4.5,
+      "aiAvgScore": 1.875,
+      "gap": 2.63,
+      "timestamp": "2026-04-09T15:42:11Z"
+    },
+    {
+      "id": "seed_077",
+      "nickname": "观察小能手 #376",
+      "videoId": "v5",
+      "userAvgScore": 4.2,
+      "aiAvgScore": 1.5,
+      "gap": 2.7,
+      "timestamp": "2026-04-09T12:55:39Z"
+    },
+    {
+      "id": "seed_078",
+      "nickname": "评课新星 #891",
+      "videoId": "v7",
+      "userAvgScore": 4.5,
+      "aiAvgScore": 1.75,
+      "gap": 2.75,
+      "timestamp": "2026-04-09T16:15:44Z"
+    },
+    {
+      "id": "seed_079",
+      "nickname": "学前教育爱好者 #234",
+      "videoId": "v8",
+      "userAvgScore": 4.8,
+      "aiAvgScore": 1.625,
+      "gap": 3.18,
+      "timestamp": "2026-04-09T14:30:07Z"
+    },
+    {
+      "id": "seed_080",
+      "nickname": "细节发现者 #567",
+      "videoId": "v6",
+      "userAvgScore": 4.5,
+      "aiAvgScore": 0.75,
+      "gap": 3.75,
+      "timestamp": "2026-04-09T11:48:22Z"
     }
   ]
 }
