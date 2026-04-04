@@ -36,7 +36,7 @@
         '<span class="share-card-score-value">' + rating.aiAvg.toFixed(1) + '</span>' +
       '</div>' +
       '<div class="share-card-score-item">' +
-        '<span class="share-card-score-label">评课差异</span>' +
+        '<span class="share-card-score-label">测评差异</span>' +
         '<span class="share-card-score-value">' + gap.toFixed(1) + '</span>' +
       '</div>';
 
@@ -131,7 +131,7 @@
         try {
           // Try native share first (mobile)
           if (navigator.share && navigator.canShare) {
-            var file = new File([blob], 'AI评课报告.png', { type: 'image/png' });
+            var file = new File([blob], 'AI测评报告.png', { type: 'image/png' });
             var shareData = { files: [file] };
             if (navigator.canShare(shareData)) {
               navigator.share(shareData).then(function () {
@@ -169,7 +169,7 @@
         }
         var url = URL.createObjectURL(blob);
         var link = document.createElement('a');
-        link.download = 'AI评课报告_' + Date.now() + '.png';
+        link.download = 'AI测评报告_' + Date.now() + '.png';
         link.href = url;
         document.body.appendChild(link);
         link.click();
@@ -187,7 +187,7 @@
     var btn = document.getElementById('btn-download');
     var dataUrl = canvas.toDataURL('image/png');
     var link = document.createElement('a');
-    link.download = 'AI评课报告_' + Date.now() + '.png';
+    link.download = 'AI测评报告_' + Date.now() + '.png';
     link.href = dataUrl;
     document.body.appendChild(link);
     link.click();

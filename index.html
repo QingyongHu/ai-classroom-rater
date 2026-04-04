@@ -6,7 +6,7 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="theme-color" content="#5B2C86">
-  <title>AI评课挑战 · 童心智教</title>
+  <title>挑战小AI测评员 · 童心智教</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -19,10 +19,11 @@
           <img src="assets/logo/童心智教logo.jpg" alt="童心智教" class="home-logo">
         </div>
         <div class="home-title-area">
-          <h1 class="home-title">您的评课直觉准不准？</h1>
-          <p class="home-subtitle">看一段幼儿园视频，您来打分，看看和AI差多少</p>
+          <h1 class="home-title">你能比小AI评得更准吗？</h1>
+          <p class="home-subtitle">看一段幼儿园视频，凭你的直觉打分，看看和小AI测评员差多少</p>
         </div>
         <button id="btn-start" class="btn-primary btn-large">开始挑战</button>
+        <a href="leaderboard.html" target="_blank" class="home-leaderboard-link">查看排行榜</a>
         <div class="home-counter">
           已有 <span id="counter-num" class="counter-number">0</span> 人参与
         </div>
@@ -75,7 +76,7 @@
 
       <!-- Rating Area -->
       <div id="rating-area" class="rating-area">
-        <h3 class="rating-title">凭直觉打分</h3>
+        <h3 class="rating-title">你来评一评</h3>
         <div id="rating-dimensions" class="rating-dimensions">
           <!-- Dynamically populated per video -->
         </div>
@@ -96,7 +97,7 @@
         <div class="analysis-progress">
           <div class="analysis-progress-bar"></div>
         </div>
-        <p id="analysis-status" class="analysis-status">小AI测评员正在分析课堂互动...</p>
+        <p id="analysis-status" class="analysis-status">小AI测评员正在分析活动互动...</p>
         <div class="analysis-particles">
           <span class="particle"></span>
           <span class="particle"></span>
@@ -146,10 +147,22 @@
         </div>
 
         <div class="result-actions">
-          <button id="btn-share" class="btn-primary">保存我的评课报告</button>
-          <button id="btn-retry-video" class="btn-secondary">再挑战一段</button>
+          <button id="btn-share" class="btn-primary">保存我的测评报告</button>
+          <div class="result-secondary-actions">
+            <button id="btn-retry-video" class="btn-secondary">再挑战一段</button>
+            <a href="leaderboard.html" target="_blank" class="btn-secondary">查看排行榜</a>
+          </div>
         </div>
       </div>
+    </section>
+
+    <!-- ==================== Page: Admin ==================== -->
+    <section id="page-admin" class="page">
+      <header class="admin-header">
+        <h1 class="admin-title">后台配置面板</h1>
+        <a href="#home" class="admin-btn admin-btn-sm">← 返回前台</a>
+      </header>
+      <div id="admin-content"></div>
     </section>
 
     <!-- ==================== Page: Share Card ==================== -->
@@ -159,11 +172,11 @@
           <div class="share-card-header">
             <img src="assets/logo/童心智教logo.jpg" alt="" class="share-card-logo">
             <div class="share-card-brand">
-              <span class="share-card-app">AI评课挑战</span>
+              <span class="share-card-app">挑战小AI测评员</span>
               <span class="share-card-org">童心智教 · 香港中文大学（深圳）</span>
             </div>
           </div>
-          <div class="share-card-title">我的评课观察力报告</div>
+          <div class="share-card-title">我的测评观察力报告</div>
           <div class="share-card-chart">
             <img id="share-radar-img" src="" alt="" class="share-radar-img">
           </div>
@@ -172,7 +185,7 @@
           </div>
           <div class="share-card-summary" id="share-card-summary"></div>
           <div class="share-card-footer">
-            <span>扫码试试您的评课直觉 →</span>
+            <span>扫码试试你的测评直觉 →</span>
             <div id="share-card-qrcode" class="share-card-qrcode"></div>
           </div>
         </div>
@@ -191,6 +204,7 @@
 
   <!-- App Scripts -->
   <script src="js/app.js"></script>
+  <script src="js/admin.js"></script>
   <script src="js/video-player.js"></script>
   <script src="js/rating.js"></script>
   <script src="js/radar-chart.js"></script>

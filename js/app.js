@@ -126,6 +126,10 @@ window.App = window.App || {};
         showPage('result');
         renderResult();
         break;
+      case 'admin':
+        showPage('admin');
+        if (App.Admin) App.Admin.render();
+        break;
       default:
         Router.navigate('home');
     }
@@ -156,7 +160,7 @@ window.App = window.App || {};
 
     var statusEl = document.getElementById('analysis-status');
     var messages = [
-      '小AI测评员正在分析课堂互动...',
+      '小AI测评员正在分析活动互动...',
       '正在匹配SSTEW量表维度...',
       '小AI测评员正在生成评估报告...'
     ];
@@ -326,9 +330,34 @@ window.App = window.App || {};
     ]).then(function (results) {
       State.videos = results[0].videos;
       State.leaderboard = results[1].entries;
+
+      // Apply custom video overrides from localStorage
+      applyCustomVideos();
     }).catch(function (err) {
       console.error('Failed to load data:', err);
     });
+  }
+
+  function applyCustomVideos() {
+    var customRaw = safeGetItem('acr_custom_videos');
+    if (!customRaw) return;
+    try {
+      var custom = JSON.parse(customRaw);
+      State.videos.forEach(function (v, i) {
+        if (custom[v.id]) {
+          var c = custom[v.id];
+          if (c.title !== undefined) State.videos[i].title = c.title;
+          if (c.description !== undefined) State.videos[i].description = c.description;
+          if (c.tag !== undefined) State.videos[i].tag = c.tag;
+          if (c.emoji !== undefined) State.videos[i].emoji = c.emoji;
+          if (c.subtitles !== undefined) State.videos[i].subtitles = c.subtitles;
+          if (c.dimensions !== undefined) State.videos[i].dimensions = c.dimensions;
+          if (c.insights !== undefined) State.videos[i].insights = c.insights;
+        }
+      });
+    } catch (e) {
+      console.warn('Failed to apply custom videos:', e);
+    }
   }
 
   // --- Init ---
