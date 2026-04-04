@@ -7,7 +7,7 @@
       "tag": "热门",
       "emoji": "🎵",
       "category": "classroom",
-      "videoSrc": "video/v1.mp4",
+      "videoSrc": "assets/videos/v1.mp4",
       "thumbnailSrc": "assets/thumbnails/v1.jpg",
       "subtitles": [
         { "start": 0, "end": 3, "text": "在小小的花园里面挖呀挖呀挖" },
@@ -58,7 +58,7 @@
       "tag": "挑战",
       "emoji": "🥤",
       "category": "classroom",
-      "videoSrc": "video/v2.mp4",
+      "videoSrc": "assets/videos/v2.mp4",
       "thumbnailSrc": "assets/thumbnails/v2.jpg",
       "subtitles": [
         { "start": 0, "end": 3, "text": "（老师示范杯子节奏动作）" },
@@ -110,7 +110,7 @@
       "tag": "温馨",
       "emoji": "🎸",
       "category": "classroom",
-      "videoSrc": "video/v3.mp4",
+      "videoSrc": "assets/videos/v3.mp4",
       "thumbnailSrc": "assets/thumbnails/v3.jpg",
       "subtitles": [
         { "start": 0, "end": 4, "text": "（孩子们列队进行手势舞表演）" },
@@ -162,7 +162,7 @@
       "tag": "亲子",
       "emoji": "🍜",
       "category": "family",
-      "videoSrc": "video/v4.mp4",
+      "videoSrc": "assets/videos/v4.mp4",
       "thumbnailSrc": "assets/thumbnails/v4.jpg",
       "subtitles": [
         { "start": 0, "end": 4, "text": "（安吉端面途中摔倒，捡起食物继续走）" },
@@ -215,7 +215,7 @@
       "tag": "反思",
       "emoji": "🗣️",
       "category": "family",
-      "videoSrc": "video/v5.mp4",
+      "videoSrc": "assets/videos/v5.mp4",
       "thumbnailSrc": "assets/thumbnails/v5.jpg",
       "subtitles": [
         { "start": 0, "end": 4, "text": "爸爸：爸爸在这里拍了第一部戏..." },
@@ -268,7 +268,7 @@
       "tag": "警示",
       "emoji": "😰",
       "category": "family",
-      "videoSrc": "video/v6.mp4",
+      "videoSrc": "assets/videos/v6.mp4",
       "thumbnailSrc": "assets/thumbnails/v6.jpg",
       "subtitles": [
         { "start": 0, "end": 4, "text": "孩子：我害怕！我讨厌坐电梯！" },
@@ -321,7 +321,7 @@
       "tag": "公开课",
       "emoji": "🏓",
       "category": "classroom",
-      "videoSrc": "video/v7.mp4",
+      "videoSrc": "assets/videos/v7.mp4",
       "thumbnailSrc": "assets/thumbnails/v7.jpg",
       "subtitles": [
         { "start": 0, "end": 4, "text": "老师：如果太吵，我就把水彩笔全部收掉！" },
@@ -374,7 +374,7 @@
       "tag": "公开课",
       "emoji": "✍️",
       "category": "classroom",
-      "videoSrc": "video/v8.mp4",
+      "videoSrc": "assets/videos/v8.mp4",
       "thumbnailSrc": "assets/thumbnails/v8.jpg",
       "subtitles": [
         { "start": 0, "end": 4, "text": "老师：看，牛的甲骨文是不是很像真的牛？" },
