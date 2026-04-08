@@ -19,6 +19,10 @@
 </head>
 <body class="leaderboard-page">
   <div class="lb-container">
+    <div class="lb-back-bar">
+      <button class="lb-back-btn" onclick="history.back()">← 返回</button>
+    </div>
+
     <header class="lb-header">
       <img src="assets/logo/童心智教logo.jpg" alt="童心智教" class="lb-header-logo">
       <h1>挑战小AI测评员 · 实时战报</h1>
@@ -57,9 +61,19 @@
   <script>
     function waitForApp() {
       if (window.App && App.Leaderboard && App.StorageManager) {
-        initLeaderboard();
+        // Also wait for data to be loaded (seed-leaderboard fetch)
+        waitForData();
       } else {
         setTimeout(waitForApp, 100);
+      }
+    }
+
+    function waitForData() {
+      var data = App.Leaderboard.getData();
+      if (data && data.length > 0) {
+        initLeaderboard();
+      } else {
+        setTimeout(waitForData, 200);
       }
     }
 
@@ -70,14 +84,15 @@
       var avgGapEl = document.getElementById('lb-avg-gap');
       var loading = document.getElementById('lb-loading');
 
+      // Hide loading, show content
+      if (loading) loading.style.display = 'none';
+      podium.style.display = '';
+      list.style.display = '';
+
       function refresh() {
         App.Leaderboard.renderPodium(podium);
         App.Leaderboard.renderList(list, 20);
         App.Leaderboard.renderStats(countEl, avgGapEl);
-        // Hide loading, show content
-        if (loading) loading.style.display = 'none';
-        podium.style.display = '';
-        list.style.display = '';
       }
 
       refresh();
