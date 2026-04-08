@@ -36,9 +36,14 @@
       </div>
     </div>
 
-    <div id="lb-podium" class="lb-podium"></div>
+    <div id="lb-podium" class="lb-podium" style="display:none;"></div>
 
-    <div id="lb-list" class="lb-list"></div>
+    <div id="lb-list" class="lb-list" style="display:none;"></div>
+
+    <div id="lb-loading" class="lb-loading">
+      <div class="lb-loading-spinner"></div>
+      <p>正在加载排行榜...</p>
+    </div>
 
     <div class="lb-marquee">扫码参与 → 看看你的测评直觉准不准？</div>
   </div>
@@ -63,11 +68,16 @@
       var list = document.getElementById('lb-list');
       var countEl = document.getElementById('lb-count');
       var avgGapEl = document.getElementById('lb-avg-gap');
+      var loading = document.getElementById('lb-loading');
 
       function refresh() {
         App.Leaderboard.renderPodium(podium);
         App.Leaderboard.renderList(list, 20);
         App.Leaderboard.renderStats(countEl, avgGapEl);
+        // Hide loading, show content
+        if (loading) loading.style.display = 'none';
+        podium.style.display = '';
+        list.style.display = '';
       }
 
       refresh();

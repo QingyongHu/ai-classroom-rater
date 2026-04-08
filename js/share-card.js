@@ -79,7 +79,7 @@
       c.style.height = '80px';
       qrcodeEl.appendChild(c);
     };
-    qrImg.src = 'assets/images/qrcode.png';
+    qrImg.src = 'assets/wechat-qr-code.png';
 
     // Render small radar chart to a temporary offscreen canvas
     var tempCanvas = document.createElement('canvas');
